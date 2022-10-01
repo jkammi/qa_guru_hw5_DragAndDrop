@@ -30,4 +30,12 @@ public class GitHub_Test {
         $(".markdown-body").$(byText("Soft assertions")).click();
         $(".markdown-body").shouldHave(Condition.text("Using JUnit5"));
     }
+
+    @Test
+    void gitHub_Hover_Test() {
+        open("https://github.com/");
+        $(".d-lg-flex").$(byText("Solutions")).hover();
+        $(".border-bottom").$(byText("Compare all")).click();
+        $(".application-main").shouldHave(Condition.text("Compare features"));
+    }
 }
